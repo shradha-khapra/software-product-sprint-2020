@@ -1,9 +1,76 @@
+body {
+  background-color: gainsboro;
+  text-align: center;
+}
+
 #content {
   margin-left: auto;
   margin-right: auto;
-  width: 650px;
+  width: 80%;
 }
 
 #greeting-container {
   margin-top: 20px;
 }
+
+#headline {
+  display: block;
+  text-align: center;
+}
+
+#name {
+  display: inline;
+  font-family: 'GT America Extended',sans-serif;
+  font-weight: 800;
+  font-size: 50px;
+}
+
+.hand {
+  font-weight: 800;
+  font-size: 50px;
+  display: inline;
+}
+
+#my-pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  border-radius: 50%;
+}
+
+#about-me {
+  display: inline-block;
+  text-align: center;
+}
+
+#bio {
+  width: 50%;
+  margin: auto;
+}
+
+ul {
+    text-align: center;
+    list-style-position: inside;
+}
+
+#contact {
+     display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.cont-span {
+  display: table-cell;
+  text-align: center;
+}
+/* .hand:hover {
+  transform: translate3d(0px, 0px, 0px);
+  transform: scale3d(1, 1, 1);
+  transform: rotateX(0deg);
+  transform: rotateY(0deg);
+  transform: rotateZ(0deg);
+  transform: skew(0deg, 0deg); 
+  transform-style: preserve-3d;
+} */
+

@@ -8,11 +8,89 @@
   </head>
   <body>
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
+      <div id="headline">
+        <div id="name">Hi there, I'm Shradha </div>
+        <span class="hand">👋</span> 
+      </div>
+      <br>
+      <img id="my-pic" src="/images/my_photo.jpeg" alt="My Picture."> 
+      <br><br>
+
+      <div id="about-me">
+        <p id="bio">
+          Born and raised in Haryana,
+          I am a final year Computer Engineering student from NSIT, Delhi.
+          My experience in tech includes working with Web Development, Linux OS and Machine Learning.
+          I also like working with neural networks and open source APIs.
+          In my college, I am a part of a technical society, taking classes for juniors to share my experience and knowledge of stuff like data structures, algorithms and web development.
+          Apart from that I have also been a member of the theatrical society to do stage plays.
+          For leisure, I enjoy watching a lot of TV series and movies.
+         <br>
+        </p>
+      </div>
+
+     <div id="projects">
+        <h1>Recent projects</h1>
+        <ul>
+            <li>
+              <b> Twitter Bot Detection </b> - Machine Learning(RVM)
+              <button onclick="addProjectDetail(this.id)" id="a">Details</button>
+              <div id="a-div">
+              </div>
+              <br>
+            </li>
+            <li>
+              <b> Character Recognition Model </b> - Machine Learning(SVM with KNN)
+              <button onclick="addProjectDetail(this.id)" id="b">Details</button>
+              <div id="b-div">
+              </div>
+              <br>
+            </li>
+            <li>
+              <b> Healthcare Portal </b> - Database Management
+              <button onclick="addProjectDetail(this.id)" id="c">Details</button>
+              <div id="c-div">
+              </div>
+              <br>
+            </li>
+            <li>
+              <b> CloudPoint </b> - Web development &amp; APIs
+              <button onclick="addProjectDetail(this.id)" id="d">Details</button>
+              <div id="d-div">
+              </div>
+              <br>
+            </li>
+        </ul>
+     </div>
+
+     <div id="internships">
+        <h1>Work Experience</h1>
+        <ul>
+            <li>
+            <b> Microsoft R&amp;D, Hyd (2020)</b> - Software Engineer Intern 
+            </li> <br>
+            <li>
+            <b> DRDO, Delhi (2019)</b> - Research Trainee 
+            </li> <br>
+            <li>
+            <b>Microsoft R&amp;D, Hyd (2019)</b> - Software Engineer Intern 
+            </li> <br>
+            <li>
+            <b> NSUT, Delhi (2020)</b> - Academic Research 
+            </li> <br>
+        </ul>
+     </div>
+
+    <div id="contact">
+      <span class="cont-span">Get In Touch!</span>
+      <span class="cont-span"><a href="https://www.linkedin.com/in/shradha-khapra">LinkedIn</a></span>
+      <span class="cont-span"><a href="https://github.com/shradha-khapra">Github</a></span>
+      <span class="cont-span"><a href="https://google.com">Send me an email :') [yet to come]</a></span> <!-- YES TO BE IMPLEMENTED -->
+    </div>    
+    <br><br>
+      <!-- <p>Click here to get a random message:</p>
       <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+      <div id="greeting-container"></div> -->
     </div>
   </body>
 </html>
