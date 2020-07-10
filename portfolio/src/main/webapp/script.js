@@ -1,3 +1,7 @@
+/**
+  * This is the main javascript file for the portfolio page. Contains a showProjectDetail method.
+  * @author: shradha-khapra
+  */
 // Copyright 2019 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,23 +17,12 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
- */
-// function addRandomGreeting() {
-//   const greetings =
-//       ["What we know is a drop and what we don't know is an ocean.", "Beets, Bears, Battlestar Galactica", "To live is to risk it all.", "People don't change. They become more of who they are."];
-
-//   // Pick a random greeting.
-//   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-//   // Add it to the page.
-//   console.log("this is a function for random quotes");
-//   const greetingContainer = document.getElementById('greeting-container');
-//   greetingContainer.innerText = greeting;
-// }
-
-function addProjectDetail(buttonId) {
-  const description =
+  * Shows details of a specified project.
+  * @param {HTMLElement.itemId} buttonId The ID of the button that was clicked to invoke the function.
+  * @return {void}
+  */
+function showProjectDetail(buttonId) {
+  const descriptions =
       [
        "A Machine Learning Bot classifier used for segregation of Bots and Humans on Twitter during Indian socio-political uproar.",
        "A Machine Learning image classifier to compare accuracy of KNN (with SVM) model and Neural Networks model for character recognition.", 
@@ -42,19 +35,19 @@ function addProjectDetail(buttonId) {
 
   switch(buttonId) {
     case "a":
-      descriptionDiv.innerText = description[0];
+      descriptionDiv.innerHTML = descriptions[0];
       break;
     case "b":
-      descriptionDiv.innerText = description[1];
+      descriptionDiv.innerHTML = descriptions[1];
       break;
     case "c":
-      descriptionDiv.innerText = description[2];
+      descriptionDiv.innerHTML = descriptions[2];
       break;
     case "d":
-      descriptionDiv.innerText = description[3];
+      descriptionDiv.innerHTML = descriptions[3];
       break;
     default:
-      descriptionDiv.innerText = "OOPS! Something went wrong.";
+      descriptionDiv.innerHTML = "OOPS! Something went wrong.";
   }
 
 }

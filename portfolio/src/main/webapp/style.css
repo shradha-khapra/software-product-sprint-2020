@@ -26,17 +26,17 @@ body {
 }
 
 .hand {
+  display: inline;
   font-weight: 800;
   font-size: 50px;
-  display: inline;
 }
 
 #my-pic {
+  border-radius: 50%;
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 30%;
-  border-radius: 50%;
 }
 
 #about-me {
@@ -45,32 +45,24 @@ body {
 }
 
 #bio {
-  width: 50%;
   margin: auto;
+  width: 50%;
 }
 
 ul {
-    text-align: center;
-    list-style-position: inside;
+  list-style-position: inside;
+  text-align: center;
 }
 
 #contact {
-     display: table;
-    width: 100%;
-    table-layout: fixed;
+  display: table;
+  table-layout: fixed;
+  width: 100%;   
 }
 
 .cont-span {
   display: table-cell;
   text-align: center;
 }
-/* .hand:hover {
-  transform: translate3d(0px, 0px, 0px);
-  transform: scale3d(1, 1, 1);
-  transform: rotateX(0deg);
-  transform: rotateY(0deg);
-  transform: rotateZ(0deg);
-  transform: skew(0deg, 0deg); 
-  transform-style: preserve-3d;
-} */
+
 
