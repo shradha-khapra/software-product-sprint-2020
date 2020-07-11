@@ -6,19 +6,19 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
-    <div id="content">
+  <body class="MainContainer">
+    <div class="Content">
 
-      <div id="headline">
-        <div id="name">Hi there, I'm Shradha </div>
-        <span class="hand">👋</span> 
+      <div class="Headline">
+        <div class="Name">Hi there, I'm Shradha </div>
+        <span class="Hand">👋</span> 
       </div>
       <br>
-      <img id="my-pic" src="/images/my_photo.jpeg" alt="My Picture."> 
+      <img class="MyPic" src="/images/my_photo.jpeg" alt="My Picture."> 
       <br><br>
 
-      <div id="about-me">
-        <p id="bio">
+      <div class="AboutMeText">
+        <p class="Bio">
           Born and raised in Haryana,
           I am a final year Computer Engineering student from NSIT, Delhi.
           My experience in tech includes working with Web Development, Linux OS and Machine Learning.
@@ -30,46 +30,41 @@
         </p>
       </div>
 
-      <div id="projects">
+      <div>
         <h1>Recent projects</h1>
-        <ul>
+        <ul class="List">
           <li>
             <b> Twitter Bot Detection </b> - Machine Learning(RVM)
-            <button onclick="showProjectDetail(this.id)" id="a" tabindex="1">Details</button>
-            <div id="a-div">
-            </div>
+            <button onclick="showProjectDetail(event)" id="a" tabindex="0">Details</button>
             <br>
           </li>
+          <br>
           <li>
             <b> Character Recognition Model </b> - Machine Learning(SVM with KNN)
-            <button onclick="showProjectDetail(this.id)" id="b" tabindex="2">Details</button>
-            <div id="b-div">
-            </div>
+            <button onclick="showProjectDetail(event)" id="b" tabindex="0">Details</button>
             <br>
           </li>
+          <br>
           <li>
             <b> Healthcare Portal </b> - Database Management
-            <button onclick="showProjectDetail(this.id)" id="c" tabindex="3">Details</button>
-            <div id="c-div">
-            </div>
+            <button onclick="showProjectDetail(event)" id="c" tabindex="0">Details</button>
             <br>
           </li>
+          <br>
           <li>
             <b> CloudPoint </b> - Web development &amp; APIs
-            <button onclick="showProjectDetail(this.id)" id="d" tabindex="4">Details</button>
-            <div id="d-div">
-            </div>
+            <button onclick="showProjectDetail(event)" id="d" tabindex="0">Details</button>
             <br>
           </li>
         </ul>
       </div>
 
-      <div id="internships">
+      <div>
         <h1>Work Experience</h1>
-        <ul>
+        <ul class="List">
           <li>
             <b> Microsoft R&amp;D, Hyd (2020)</b> - Software Engineer Intern 
-            </li> <br>
+          </li> <br>
             <li>
             <b> DRDO, Delhi (2019)</b> - Research Trainee 
           </li> <br>
@@ -82,11 +77,12 @@
         </ul>
       </div>
 
-      <div id="contact">
-        <span class="cont-span">Get In Touch!</span>
-        <span class="cont-span"><a href="https://www.linkedin.com/in/shradha-khapra">LinkedIn</a></span>
-        <span class="cont-span"><a href="https://github.com/shradha-khapra">Github</a></span>
-        <span class="cont-span"><a href="https://google.com">Send me an email :') [yet to come]</a></span> <!-- YES TO BE IMPLEMENTED -->
+      <div class="Contact">
+        <span class="ContactSpan">Get In Touch!</span>
+        <span class="ContactSpan"><a href="https://www.linkedin.com/in/shradha-khapra">LinkedIn</a></span>
+        <span class="ContactSpan"><a href="https://github.com/shradha-khapra">Github</a></span>
+        <!-- TODO(<https://github.com/shradha-khapra/software-product-sprint-2020/issues/3>): This is not implemented for now. -->
+        <span class="ContactSpan"><a href="https://google.com">Send me an email :') [yet to come]</a></span> 
       </div>    
       <br><br>
     </div>
