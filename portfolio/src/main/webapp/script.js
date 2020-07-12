@@ -22,6 +22,7 @@
   * Shows details of a specified project.
   * @param {!Event} event The event object received.
   * @return {void}
+  * @throws {!Error} If the HTML id specified in the target element is incorrect.
   */
 function showProjectDetail(event) {
   const descriptions =
@@ -29,30 +30,18 @@ function showProjectDetail(event) {
        "A Machine Learning Bot classifier used for segregation of Bots and Humans on Twitter during Indian socio-political uproar.",
        "A Machine Learning image classifier to compare accuracy of KNN (with SVM) model and Neural Networks model for character recognition.", 
        "A portal for organizing information and making appointments with healthcare professionals.", 
-       "A Google Maps & Weather API based application for real-time weather info on Maps with additional functionalities."
+       "A Google Maps & Weather API based application for real-time weather info on Maps with additional functionalities.",
       ];
 
   // Add description to the page. 
   const descriptionDiv = document.createElement('div');
   const targetElement = event.target;
 
-  switch(targetElement.id) {
-    case "1":
-      descriptionDiv.innerHTML = descriptions[0];
-      break;
-    case "2":
-      descriptionDiv.innerHTML = descriptions[1];
-      break;
-    case "3":
-      descriptionDiv.innerHTML = descriptions[2];
-      break;
-    case "4":
-      descriptionDiv.innerHTML = descriptions[3];
-      break;
-    default:
-      descriptionDiv.innerHTML = "OOPS! Something went wrong.";
+  const index = parseInt(targetElement.id, /* radix= */ 10);
+  if(index < 0 || index >= descriptionDiv.length) {
+    throw new Error("Description is not available for the given id.");
   }
-  
+  descriptionDiv.innerHTML = descriptions[index];
   targetElement.parentElement.appendChild(descriptionDiv);
 
 }
