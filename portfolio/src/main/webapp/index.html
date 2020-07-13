@@ -6,13 +6,85 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+  <body class="MainContainer">
+    <div class="Content">
+
+      <div class="Headline">
+        <div class="Name">Hi there, I'm Shradha </div>
+        <span class="Hand">👋</span> 
+      </div>
+      <br>
+      <img class="ProfilePic" src="/images/my_photo.jpeg" alt="My Picture."> 
+      <br><br>
+
+      <div class="AboutMeText">
+        <p class="Bio">
+          Born and raised in Haryana,
+          I am a final year Computer Engineering student from NSIT, Delhi.
+          My experience in tech includes working with Web Development, Linux OS and Machine Learning.
+          I also like working with neural networks and open source APIs.
+          In my college, I am a part of a technical society, taking classes for juniors to share my experience and knowledge of stuff like data structures, algorithms and web development.
+          Apart from that I have also been a member of the theatrical society to do stage plays.
+          For leisure, I enjoy watching a lot of TV series and movies.
+          <br>
+        </p>
+      </div>
+
+      <div>
+        <h1>Recent projects</h1>
+        <ul class="List">
+          <li>
+            <b> Twitter Bot Detection </b> - Machine Learning(RVM)
+            <button onclick="showProjectDetail(event)" id="0" tabindex="0" role="Project Description Button">Details</button>
+            <br>
+          </li>
+          <br>
+          <li>
+            <b> Character Recognition Model </b> - Machine Learning(SVM with KNN)
+            <button onclick="showProjectDetail(event)" id="1" tabindex="0" role="Project Description Button">Details</button>
+            <br>
+          </li>
+          <br>
+          <li>
+            <b> Healthcare Portal </b> - Database Management
+            <button onclick="showProjectDetail(event)" id="2" tabindex="0" role="Project Description Button">Details</button>
+            <br>
+          </li>
+          <br>
+          <li>
+            <b> CloudPoint </b> - Web development &amp; APIs
+            <button onclick="showProjectDetail(event)" id="3" tabindex="0" role="Project Description Button">Details</button>
+            <br>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h1>Work Experience</h1>
+        <ul class="List">
+          <li>
+            <b> Microsoft R&amp;D, Hyd (2020)</b> - Software Engineer Intern 
+          </li> <br>
+          <li>
+            <b> DRDO, Delhi (2019)</b> - Research Trainee 
+          </li> <br>
+          <li>
+            <b>Microsoft R&amp;D, Hyd (2019)</b> - Software Engineer Intern 
+          </li> <br>
+          <li>
+            <b> NSUT, Delhi (2020)</b> - Academic Research 
+          </li> <br>
+        </ul>
+      </div>
+
+      <div class="Contact">
+        <span class="ContactSpan">Get In Touch!</span>
+        <span class="ContactSpan"><a href="https://www.linkedin.com/in/shradha-khapra">LinkedIn</a></span>
+        <span class="ContactSpan"><a href="https://github.com/shradha-khapra">Github</a></span>
+        <!-- TODO(<https://github.com/shradha-khapra/software-product-sprint-2020/issues/3>): This is not implemented for now. -->
+        <span class="ContactSpan"><a href="https://google.com">Send me an email :') [yet to come]</a></span> 
+      </div>    
+      <br><br>
     </div>
   </body>
 </html>
