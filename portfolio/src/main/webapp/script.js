@@ -65,7 +65,7 @@ function showComments() {
 
 /**
  * Creates a list of comments and displays it to main page.
- * @params {string}
+ * @params {string} text
  * @return {!Element}
  */
 function createListElement(text) {
