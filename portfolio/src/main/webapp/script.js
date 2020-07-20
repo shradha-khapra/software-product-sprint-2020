@@ -43,5 +43,30 @@ function showProjectDetail(event) {
   }
   descriptionDiv.innerHTML = descriptions[index];
   targetElement.parentElement.appendChild(descriptionDiv);
+}
 
+/**
+ * Shows comments on the page.
+ * @return {void}
+ */
+function showComments() {
+  fetch('/add-comment').then(response => response.json()).then((comments) => {
+    console.log(comments);
+    const commentsListElement = document.getElementById('CommentsBoard');
+    for(let i=0;i<comments.length;i++) {
+      commentsListElement.appendChild(
+      createListElement(comments[i].message + "\n -  by " + comments[i].name));
+    }
+  });
+}
+
+/**
+ * Creates a list of comments and displays it to main page.
+ * @params {string}
+ * @return {listitem}
+ */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }
