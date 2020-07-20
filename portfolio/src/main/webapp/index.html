@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body class="MainContainer">
+  <body class="MainContainer" onload="showComments()">
     <div class="Content">
 
       <div class="Headline">
@@ -85,6 +85,20 @@
         <span class="ContactSpan"><a href="https://google.com">Send me an email :') [yet to come]</a></span> 
       </div>    
       <br><br>
+    </div>
+
+    <div>
+      <h4>Wish to add any messages/comments about the portfolio?</h4><br><br>
+      <form action="/add-comment" method="POST">
+        <label for="message">Your Message</label><br>
+        <input type="text" id="message" name="message" placeholder="I prefer a lighter shade of blue for background."><br><br>
+        <label for="name">Your Name</label><br>
+        <input type="text" id="name" name="name" placeholder="Jane Doe"><br><br>
+        <input type="submit" value="Add my Comment"><br><br>
+      </form>
+      <br>
+      <div id="CommentsBoard">
+      </div>
     </div>
   </body>
 </html>
