@@ -27,14 +27,29 @@ import com.google.appengine.api.datastore.Query;
 import com.google.gson.Gson;
 import java.util.*;
 
+/** 
+ * Servlet that stores/returns comments to/from a data store.
+ * @author shradha-khapra
+ */
 @WebServlet("/add-comment")
 public class DataServlet extends HttpServlet {
-  //This is a class to store a comment object.  
-  private class Comment {
-    String message, name;
+  /** 
+   * This class represents a comment.
+   */  
+  private static class Comment {
+    private final String message;
+    private final String name;
     public Comment(String message, String name){
       this.message = message;
       this.name = name;
+    }
+    
+    public String getMessage(){
+      return this.message;
+    }
+
+    public String getName(){
+        return this.name;
     }
   }
   
@@ -60,8 +75,8 @@ public class DataServlet extends HttpServlet {
   }
 
   /**
-  * Gets comments from data store.
-  */
+   * Gets comments from data store.
+   */
   private List<Comment> getDataStoreComments(PreparedQuery results) {
     List<Comment> comments = new ArrayList<>();
     for (Entity entity : results.asIterable()) {
@@ -74,8 +89,8 @@ public class DataServlet extends HttpServlet {
   }
 
   /**
-  * Adds the comments to the data store.
-  */
+   * Adds the comments to the data store.
+   */
   private void addCommentToDataStore(HttpServletRequest request){
     String nMessage = request.getParameter("message");
     String nName = request.getParameter("name");
@@ -94,8 +109,8 @@ public class DataServlet extends HttpServlet {
   }
   
   /**
-  * Converts comments into a JSON string using the Gson library.
-  */
+   * Converts comments into a JSON string using the Gson library.
+   */
   private String convertToJsonUsingGson(List<Comment> comments) {
     Gson gson = new Gson();
     String json = gson.toJson(comments);

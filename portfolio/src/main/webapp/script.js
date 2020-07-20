@@ -45,18 +45,22 @@ function showProjectDetail(event) {
   targetElement.parentElement.appendChild(descriptionDiv);
 }
 
+Window.onload = showComments();
+
 /**
  * Shows comments on the page.
  * @return {void}
  */
 function showComments() {
   fetch('/add-comment').then(response => response.json()).then((comments) => {
-    console.log(comments);
+    
     const commentsListElement = document.getElementById('CommentsBoard');
-    for(let i=0;i<comments.length;i++) {
+    
+    comments.forEach((comment)=> {
       commentsListElement.appendChild(
-      createListElement(comments[i].message + "\n -  by " + comments[i].name));
-    }
+      createListElement(`${comment.message}\n - by ${comment.name}`));
+    });
+
   });
 }
 
