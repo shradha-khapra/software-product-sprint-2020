@@ -49,7 +49,6 @@ window.onload = showComments();
 
 /**
  * Shows comments on the page.
- * @return {void}
  */
 function showComments() {
   fetch('/add-comment').then(response => response.json()).then((comments) => {
@@ -67,7 +66,7 @@ function showComments() {
 /**
  * Creates a list of comments and displays it to main page.
  * @params {string}
- * @return {listitem}
+ * @return {!Element}
  */
 function createListElement(text) {
   const liElement = document.createElement('li');

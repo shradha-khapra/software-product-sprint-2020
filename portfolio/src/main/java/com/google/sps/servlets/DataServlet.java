@@ -51,7 +51,14 @@ public class DataServlet extends HttpServlet {
       return this.name;
     }
   }
+
+  private static final String ENTITY_MESSAGE_PROPERTY_NAME = "message";
+  private static final String ENTITY_NAME_PROPERTY_NAME = "name";
+  private static final String ENTITY_NAME = "Comment";
   
+  /**
+   * Server side handler for POST requests.
+   */
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     addCommentToDataStore(request);
@@ -60,9 +67,12 @@ public class DataServlet extends HttpServlet {
     response.sendRedirect("/index.html");
   }
 
+  /**
+   * Server side handler for GET requests.
+   */
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    Query query = new Query("Comment");
+    Query query = new Query(ENTITY_NAME);
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery dsQueryResults = datastore.prepare(query);
  
@@ -79,8 +89,8 @@ public class DataServlet extends HttpServlet {
   private List<Comment> getDataStoreComments(PreparedQuery dsQueryResults) {
     List<Comment> comments = new ArrayList<>();
     for (Entity entity : dsQueryResults.asIterable()) {
-      String message = (String) entity.getProperty("message");
-      String name = (String) entity.getProperty("name");
+      String message = (String) entity.getProperty(ENTITY_MESSAGE_PROPERTY_NAME);
+      String name = (String) entity.getProperty(ENTITY_NAME_PROPERTY_NAME);
       Comment comment = new Comment(message, name);
       comments.add(comment);
     }
@@ -91,17 +101,20 @@ public class DataServlet extends HttpServlet {
    * Adds the comments to the data store.
    */
   private void addCommentToDataStore(HttpServletRequest request) {
-    String nMessage = request.getParameter("message");
-    String nName = request.getParameter("name");
+    String nMessage = request.getParameter(ENTITY_MESSAGE_PROPERTY_NAME);
+    String nName = request.getParameter(ENTITY_NAME_PROPERTY_NAME);
 
-    if(nName.length() == 0)
+    if(nName.length() == 0) {
       nName = "Anonymous";
-    if(nMessage.length() == 0)
+    }
+      
+    if(nMessage.length() == 0) {
       nMessage = "Somebody left me a blank message:')";
+    }
 
-    Entity nComment = new Entity("Comment");
-    nComment.setProperty("message", nMessage);
-    nComment.setProperty("name", nName);
+    Entity nComment = new Entity(ENTITY_NAME);
+    nComment.setProperty(ENTITY_MESSAGE_PROPERTY_NAME, nMessage);
+    nComment.setProperty(ENTITY_NAME_PROPERTY_NAME, nName);
 
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     datastore.put(nComment);
