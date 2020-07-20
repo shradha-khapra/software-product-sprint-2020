@@ -45,7 +45,7 @@ function showProjectDetail(event) {
   targetElement.parentElement.appendChild(descriptionDiv);
 }
 
-Window.onload = showComments();
+window.onload = showComments();
 
 /**
  * Shows comments on the page.
@@ -56,7 +56,7 @@ function showComments() {
     
     const commentsListElement = document.getElementById('CommentsBoard');
     
-    comments.forEach((comment)=> {
+    comments.forEach((comment) => {
       commentsListElement.appendChild(
       createListElement(`${comment.message}\n - by ${comment.name}`));
     });

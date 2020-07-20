@@ -29,7 +29,6 @@ import java.util.*;
 
 /** 
  * Servlet that stores/returns comments to/from a data store.
- * @author shradha-khapra
  */
 @WebServlet("/add-comment")
 public class DataServlet extends HttpServlet {
@@ -39,17 +38,17 @@ public class DataServlet extends HttpServlet {
   private static class Comment {
     private final String message;
     private final String name;
-    public Comment(String message, String name){
+    public Comment(String message, String name) {
       this.message = message;
       this.name = name;
     }
     
-    public String getMessage(){
+    public String getMessage() {
       return this.message;
     }
 
-    public String getName(){
-        return this.name;
+    public String getName() {
+      return this.name;
     }
   }
   
@@ -65,9 +64,9 @@ public class DataServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Query query = new Query("Comment");
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-    PreparedQuery results = datastore.prepare(query);
+    PreparedQuery dsQueryResults = datastore.prepare(query);
  
-    List<Comment> comments = getDataStoreComments(results);
+    List<Comment> comments = getDataStoreComments(dsQueryResults);
 
     String json = convertToJsonUsingGson(comments);
     response.setContentType("application/json;");
@@ -77,9 +76,9 @@ public class DataServlet extends HttpServlet {
   /**
    * Gets comments from data store.
    */
-  private List<Comment> getDataStoreComments(PreparedQuery results) {
+  private List<Comment> getDataStoreComments(PreparedQuery dsQueryResults) {
     List<Comment> comments = new ArrayList<>();
-    for (Entity entity : results.asIterable()) {
+    for (Entity entity : dsQueryResults.asIterable()) {
       String message = (String) entity.getProperty("message");
       String name = (String) entity.getProperty("name");
       Comment comment = new Comment(message, name);
@@ -91,7 +90,7 @@ public class DataServlet extends HttpServlet {
   /**
    * Adds the comments to the data store.
    */
-  private void addCommentToDataStore(HttpServletRequest request){
+  private void addCommentToDataStore(HttpServletRequest request) {
     String nMessage = request.getParameter("message");
     String nName = request.getParameter("name");
 
