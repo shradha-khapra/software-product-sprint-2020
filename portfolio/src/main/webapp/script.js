@@ -73,3 +73,32 @@ function createListElement(text) {
   liElement.innerText = text;
   return liElement;
 }
+
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawChart);
+
+/**
+ * Creates a chart for programming languages and adds it to the page.
+ */
+function drawChart() {
+  const data = google.visualization.arrayToDataTable([
+    ['Language', 'Proficiency', { role: 'style' }],
+    ['Java', 80, 'color: blue'],      
+    ['C++', 70, 'color: blue'],          
+    ['Golang', 50, 'color: blue'],
+    ['Python', 30, 'color: blue' ], 
+  ]);
+  const options = {
+    title: 'My proficiency in various proramming languages',
+    chartArea: {width: '50%'},
+    hAxis: {
+      title: 'Proficiency (out of 100)',
+      minValue: 0
+    },
+    vAxis: {
+      title: 'Language'
+    }
+  };
+  const chart = new google.visualization.BarChart(document.getElementById('LangChartContainer'));
+  chart.draw(data, options);
+}
