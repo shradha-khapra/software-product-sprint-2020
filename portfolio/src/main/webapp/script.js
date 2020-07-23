@@ -105,7 +105,6 @@ function drawChart() {
   chart.draw(langData, options);
 }
 
-
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(showVotes);
 
