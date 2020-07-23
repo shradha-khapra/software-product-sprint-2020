@@ -34,7 +34,7 @@ public class ProjectDataServlet extends HttpServlet {
   private Map<String, Integer> projectVotes = new HashMap<>();
 
   /**
-   * Handler for server side GET requests.
+   * Handles server side GET requests.
    */
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -45,7 +45,7 @@ public class ProjectDataServlet extends HttpServlet {
   }
 
   /**
-   * Handler for server side POST requests.
+   * Handles server side POST requests.
    */
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
