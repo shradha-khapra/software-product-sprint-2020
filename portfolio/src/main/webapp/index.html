@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="script.js"></script>
   </head>
   <body class="MainContainer">
     <div class="Content">
@@ -100,11 +98,30 @@
       <br>
       <div id="CommentsBoard">
       </div>
+      <br><br>
     </div>
 
     <div class="ChartContainer">
       <div id="LangChartContainer">
       </div>
+      <br><br>
+    </div>
+
+    <div>
+      <h4>Which of my projects did you like the most?</h4>
+      <form action="/vote-project" method="POST">
+        <select name="project">
+          <option value="twitterBot">Twitter Bot Detection</option>
+          <option value="characterRecognition">Character Recognition Model</option>
+          <option value="healthcarePortal">Healthcare Portal</option>
+          <option value="cloudPoint">CloudPoint (with APIs)</option>
+        </select>
+        <button>Vote</button>
+      </form>
+      <div id="ProjectVotes">
+      </div>
     </div>
   </body>
+  <script src="https://www.gstatic.com/charts/loader.js" async></script>
+  <script src="script.js"></script>
 </html>
